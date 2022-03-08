@@ -67,6 +67,8 @@ class GeneratePascalsTriangle:
 
     def generateN2M1(self) -> List[List[int]]:
 
+        # Use ctr+alt+shift + v to paste lines without new line characters
+
         # Time complexity is On2 and space complexity is On2
         # A O(n^2) time and O(1) extra
         # space method for Pascal's Triangle
