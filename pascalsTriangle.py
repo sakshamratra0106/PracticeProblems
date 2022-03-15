@@ -24,10 +24,17 @@ class GeneratePascalsTriangle:
 
     # See https://www.geeksforgeeks.org/space-and-time-efficient-binomial-coefficient/
     # for details of this function
+    # // Returns value of Binomial Coefficient C(n, k)
+
     def binomialCoeff(self, n, k):
         res = 1
+
+        # // Since C(n, k) = C(n, n-k)
         if k > n - k:
             k = n - k
+
+        # // Calculate value of
+        # // [n * (n-1) *---* (n-k+1)] / [k * (k-1) *----* 1]
         for i in range(0, k):
             res = res * (n - i)
             res = res // (i + 1)
@@ -73,7 +80,9 @@ class GeneratePascalsTriangle:
         # A O(n^2) time and O(1) extra
         # space method for Pascal's Triangle
         # Method 3 ( O(n^2) time and O(1) extra space )
-        # This method is based on method 1. We know that ith entry in a line number line is Binomial Coefficient C(line, i) and all lines start with value 1. The idea is to calculate C(line, i) using C(line, i-1). It can be calculated in O(1) time using the following.
+        # This method is based on method 1. We know that ith entry in a line number line is Binomial Coefficient C(line, i)
+        # and all lines start with value 1. The idea is to calculate C(line, i) using C(line, i-1).
+        # It can be calculated in O(1) time using the following.
         #
         #
         # C(line, i)   = line! / ( (line-i)! * i! )
@@ -91,6 +100,27 @@ class GeneratePascalsTriangle:
                 print(C, end=" ");
                 C = int(C * (line - i) / i);
             print("");
+
+
+    # Working code for Dynamic Pogramming
+    # Time Complexity NA
+
+    # def generate(self, numRows: int) -> List[List[int]]:
+    #     def dp(i):
+    #         if i == 1:
+    #             return [[1]]
+    #         if i == 2:
+    #             return [row for row in dp(i - 1)] + [[1, 1]]
+    #
+    #         if i not in memo:
+    #             prev = dp(i - 1)
+    #             memo[i] = [row for row in prev] + [
+    #                 [1] + [prev[-1][j] + prev[-1][j - 1] for j in range(1, len(prev[-1]))] + [1]]
+    #
+    #         return memo[i]
+    #
+    #     memo = {}
+    #     return dp(numRows)
 
 
 if __name__ == "__main__":
