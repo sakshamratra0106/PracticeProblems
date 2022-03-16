@@ -43,18 +43,18 @@ class Solution:
             return -1
 
     def searchMatrixNLogN(self,
-                       target: int) -> bool:
+                          target: int) -> bool:
 
         # Searching a Target in a Matrix
-        # with time complexity N2 and Memory as 1
+        # with time complexity O(N * LogN) and Memory as 1
         for row in self.matrix:
-            if self.binarySearch(row,0, len(row) -1,target) >= 0:
+            if self.binarySearch(row, 0, len(row) - 1, target) >= 0:
                 return True
 
         return False
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     # Matrix Search with
     # time complexity O(N^2)
     matrix = [[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]]
