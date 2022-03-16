@@ -43,6 +43,30 @@ class Solution:
         return True
 
 
+    # Can ransomNote: str can be formed out of
+    # magazine: str in O(N) time complexity
+    # Working code
+    # Leetcode 383. Ransom Note
+    def canConstruct(self, magazine: str) -> bool:
+        charCount = {}
+        for char in magazine:
+            if char in charCount:
+                charCount[char] += 1
+            else:
+                charCount[char] = 1
+
+        for char in ransomNote:
+            if char in charCount:
+                charCount[char] -= 1
+            else:
+                return False
+
+        for char in charCount:
+            if charCount[char] < 0:
+                return False
+
+        return True
+
 if __name__ == "__main__":
     # Anagram in O(n) time complexity
 
