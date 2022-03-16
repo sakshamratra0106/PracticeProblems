@@ -4,7 +4,7 @@ class Node:
         self.value = value
         self.next = None
 
-        # Added this flag to reduce detect loop function memory complexity from O(N) to O(1)
+        # Added this flag to reduce detect loop with memory complexity from O(N) to O(1)
         # detectLoop1 has O(N) and detectLoop2 has O(1)
         self.visitedCount = 0
 
@@ -16,24 +16,67 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    # inserting elements to linked list in the begining
+    # inserting elements to linked list in the beginning
     def push(self, element) -> None:
         new_node = Node(element)
         new_node.next = self.head
         self.head = new_node
 
+    # Alternate to printList Function
+    # Also called as Magic function for CLASS's
+    # By default called when object of the class is called inside a print(CLASS obj) function
+
+    def __str__(self):
+
+        if not self.detectLoop3():
+
+            # defining a blank res variable
+            res = ""
+
+            # initializing ptr to head
+            ptr = self.head
+
+            # traversing and adding it to res
+            while ptr:
+                res += str(ptr.value) + ", "
+                ptr = ptr.next
+
+            # removing trailing commas
+            res = res.strip(", ")
+
+            # chen checking if
+            # anything is present in res or not
+            if len(res):
+                return "[" + res + "]"
+            else:
+                return "[]"
+        else:
+            return "\"Cyclic Linked List has been detected hence not printing." \
+                   "Will Enhance the code to print the cyclic Linked Lists in Future.\""
+
     # Printing the linked list
     def printList(self) -> None:
         temp = self.head
-        print("HEAD", end="")
-        while temp:
-            print("--", temp.value, end="")
-            temp = temp.next
+        print("\n HEAD", end="")
+
+        # commenting out since this works only when
+        # Linked Lists doesn't have a loop
+
+        # while temp:
+        #     print("--", temp.value, end="")
+        #     temp = temp.next
 
         # To Do #
         # Implement changes to accommodate
         # if linkedList is looped or is looped or is cycled
         # at that time also it should work
+
+        if self.detectLoop3():
+            return None
+        else:
+            while temp:
+                print("--", temp.value, end="")
+                temp = temp.next
 
     # Detect Loop in LinkedList with O(N)
     def detectLoop1(self) -> None:
@@ -76,6 +119,7 @@ class LinkedList:
         return False
 
         # Detect Loop in LinkedList with O(N)
+
     def detectLoop3(self) -> None:
 
         # Implementation of Floyd’s Cycle-Finding Algorithm:
@@ -107,6 +151,7 @@ class LinkedList:
                 return True
         return False
 
+
 if __name__ == "__main__":
     # Creating the Linked List and Inserting elements Method One
     Llist = LinkedList()
@@ -114,8 +159,8 @@ if __name__ == "__main__":
     Llist.head.next = Node(2)
     Llist.head.next.next = Node(3)
 
-    print("Printing First Linked List")
-    Llist.printList()
+    print("Printing First Linked List ", Llist)
+
 
     # Creating the Linked List and Inserting elements Method Two
 
@@ -130,14 +175,16 @@ if __name__ == "__main__":
     second.next = third
     third.next = first
 
-    print("\n Printing Second Linked List")
+    print("\n Printing Second Linked List ",Llist1)
     # Since to detect loop in a Linked List
     # had to create a list with a loop and after creating a loop and printing
     # it will go in an infinite loop hence commenting this out
     # Incase want to use print condition again remove or comment line number 70
     # i.e line 70. third.next = first
 
-    print("commented out this part because of infinite loop")
+    # print("commented out this part because of infinite loop")
+
+    # Corrected the code if conditions to return exceptions to cyclic LinkedLists
     # Llist1.printList()
 
     # Creating the Linked List and Inserting elements Method Three
@@ -147,66 +194,73 @@ if __name__ == "__main__":
     Llist.push(3)
     Llist.push(4)
     Llist.push(5)
-    print("\nPrinting Third Linked List")
-
-    Llist.printList()
+    print("\nPrinting Third Linked List ",Llist)
 
     # Checking loop with variable Llist1
     if Llist1.detectLoop1():
         print("\n Linked List {} has loop in it (using detectLoop1)? {}".format(
-            -1, True
+            Llist1, True
         ))
     else:
         print("\nLinked List {} has loop in it  (using detectLoop1)? {}".format(
-            Llist1.printList(), False
+            Llist1, False
         ))
 
     # Checking loop with variable Llist
     if Llist.detectLoop1():
         print("\nLinked List {} has loop in it  (using detectLoop1)? {}".format(
-            -1, True
+            Llist, True
         ))
     else:
         print("\nLinked List {} has loop in it  (using detectLoop1)? {}".format(
-            Llist.printList(), False
+            Llist, False
         ))
 
     # Checking loop with variable Llist1
     if Llist1.detectLoop2():
         print("\nLinked List {} has loop in it  (using detectLoop2)? {}".format(
-            -1, True
+            Llist1, True
         ))
     else:
         print("\nLinked List {} has loop in it   (using detectLoop2)? {}".format(
-            Llist1.printList(), False
+            Llist1, False
         ))
 
     # Checking loop with variable Llist
     if Llist.detectLoop2():
         print("\nLinked List {} has loop in it   (using detectLoop2)? {}".format(
-            -1, True
+            Llist, True
         ))
     else:
         print("\nLinked List {} has loop in it   (using detectLoop2)? {}".format(
-            Llist.printList(), False
+            Llist, False
         ))
 
     # Checking loop with variable Llist1
     if Llist1.detectLoop3():
         print("\nLinked List {} has loop in it (using detectLoop3)? {}".format(
-            -1, True
+            Llist1, True
         ))
     else:
         print("\nLinked List {} has loop in it  (using detectLoop3)? {}".format(
-            Llist1.printList(), False
+            Llist1, False
         ))
 
     # Checking loop with variable Llist
     if Llist.detectLoop3():
         print("\nLinked List {} has loop in it  (using detectLoop3)? {}".format(
-            -1, True
+            Llist, True
         ))
     else:
         print("\nLinked List {} has loop in it  (using detectLoop3)? {}".format(
-            Llist.printList(), False
+            Llist, False
         ))
+
+
+    # Pretty print with magic function __str__
+    # when List doesn't have cycle in it
+    print("Pretty print with magic function __str__ = ", Llist)
+
+    # when List does have cycle in it
+    # Falls into infinite loop
+    print("Pretty print with magic function __str__ when List does have cycle in it = ", Llist1)
