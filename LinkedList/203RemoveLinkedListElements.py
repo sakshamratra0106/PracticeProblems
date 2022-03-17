@@ -55,14 +55,17 @@ class LinkedList:
         # Remove an element from the LinkedList recursively
         # With time complexity as O(N) and Space Complexity as O(1)
 
+        # TO DO
+        # Function Not Working
+
         # If list is empty
         if not self.head: return None
 
         # If list is non-empty
         if self.head.value == val:
-            self.head = self.removeElements2( val)
+            self.head = self.removeElements2(self.head.next, val)
         else:
-            self.head.next = self.removeElements2( val)
+            self.head.next = self.removeElements2(self.head.next, val)
         return self.head
 
 
