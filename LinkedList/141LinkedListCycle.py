@@ -184,7 +184,7 @@ if __name__ == "__main__":
 
     # print("commented out this part because of infinite loop")
 
-    # Corrected the code if conditions to return exceptions to cyclic LinkedLists
+    # Corrected the code if conditions to return exceptions to cyclic LinkedList
     # Llist1.printList()
 
     # Creating the Linked List and Inserting elements Method Three
