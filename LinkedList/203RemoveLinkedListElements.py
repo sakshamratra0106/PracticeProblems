@@ -32,8 +32,38 @@ class LinkedList:
 
         return linkedlist
 
-    def removeElements(self, val: int) -> Optional[Node]:
-        pass
+    def removeElements1(self, val: int) -> Optional[Node]:
+
+        # Remove an element from the LinkedList
+        # With time complexity as O(N) and Space Complexity as O(1)
+
+        # Remove first and consequence occurrences of the val
+        while self.head and self.head.value == val: self.head = self.head.next
+
+        current = self.head
+
+        while current:
+            if current.next and current.next.value == val:
+                current.next = current.next.next
+            else:
+                current = current.next
+
+        return self.head
+
+    def removeElements2(self, val: int) -> Optional[Node]:
+
+        # Remove an element from the LinkedList recursively
+        # With time complexity as O(N) and Space Complexity as O(1)
+
+        # If list is empty
+        if not self.head: return None
+
+        # If list is non-empty
+        if self.head.value == val:
+            self.head = self.removeElements2( val)
+        else:
+            self.head.next = self.removeElements2( val)
+        return self.head
 
 
 if __name__ == "__main__":
@@ -43,4 +73,115 @@ if __name__ == "__main__":
     ll.push(3)
     ll.push(4)
 
-    print(ll)
+    print("Printing Linked List ll \n {}".format(ll))
+
+    # Remove an element from the linked lists ll and ll1
+    ll1 = LinkedList()
+    ll1.push(1)
+    ll1.push(2)
+    ll1.push(6)
+    ll1.push(4)
+    ll1.push(5)
+    ll1.push(6)
+    ll1.push(2)
+
+    print("\n#### Going to perform deletion ####")
+    removingNumber = 2
+    print("\n Given LinkedList is ll \n {}".format(
+        ll
+    ))
+    ll.removeElements1(removingNumber)
+    print(" \n Printing Linked List ll1 after removing element {} from linked List \n {}".format(
+        removingNumber, ll))
+
+    print("\n#### Going to perform deletion ####")
+    removingNumber = 4
+    print("\n Given LinkedList is ll \n {}".format(
+        ll
+    ))
+    ll.removeElements1(removingNumber)
+    print(" \n Printing Linked List ll1 after removing element {} from linked List \n {}".format(
+        removingNumber, ll))
+
+    print("\n#### Going to perform deletion ####")
+    removingNumber = 2
+    print("\n Given LinkedList is ll1 \n {}".format(
+        ll1
+    ))
+    ll1.removeElements1(removingNumber)
+    print(" \n Printing Linked List ll1 after removing element {} from linked List \n {}".format(
+        removingNumber, ll1))
+
+    print("\n#### Going to perform deletion ####")
+    removingNumber = 6
+    print("\n Given LinkedList is ll1 \n {}".format(
+        ll1
+    ))
+    ll1.removeElements1(removingNumber)
+    print(" \n Printing Linked List ll1 after removing element {} from linked List \n {}".format(
+        removingNumber, ll1))
+
+    print("\n#### Going to perform deletion ####")
+    removingNumber = 1
+    print("\n Given LinkedList is ll1 \n {}".format(
+        ll1
+    ))
+    ll1.removeElements1(removingNumber)
+    print(" \n Printing Linked List ll1 after removing element {} from linked List \n {}".format(
+        removingNumber, ll1))
+
+    print("\n#### Going to perform deletion ####")
+    removingNumber = 4
+    print("\n Given LinkedList is ll1 \n {}".format(
+        ll1
+    ))
+    ll1.removeElements1(removingNumber)
+    print(" \n Printing Linked List ll1 after removing element {} from linked List \n {}".format(
+        removingNumber, ll1))
+
+    print("\n#### Going to perform deletion ####")
+    removingNumber = 5
+    print("\n Given LinkedList is ll1 \n {}".format(
+        ll1
+    ))
+    ll1.removeElements1(removingNumber)
+    print(" \n Printing Linked List ll1 after removing element {} from linked List \n {}".format(
+        removingNumber, ll1))
+
+    # Remove an element from the linked lists ll2
+    ll2 = LinkedList()
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+
+    print("\n#### Going to perform deletion ####")
+    removingNumber = 1
+    print("\n Given LinkedList is ll2 \n {}".format(
+        ll2
+    ))
+    ll2.removeElements1(removingNumber)
+    print(" \n Printing Linked List ll2 after removing element {} from linked List \n {}".format(
+        removingNumber, ll2))
+
+    # Remove an element from the linked lists ll2 using removeElement2()
+    ll2 = LinkedList()
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+    ll2.push(1)
+
+    print("\n#### Going to perform deletion using removeElement2()####")
+    removingNumber = 1
+    print("\n Given LinkedList is ll2 \n {}".format(
+        ll2
+    ))
+    # ll2.removeElements2(removingNumber)
+    print(" \n Printing Linked List ll2 after removing element {} from linked List \n {}".format(
+        removingNumber, ll2))
