@@ -2,6 +2,9 @@
 # Linked List which has __init__, __str__, push(), detectLoop() : O(N), removeElements() : O(N)
 from LinkedList import *
 
+# TODO
+## Was not able to add a new function[mergeTwoLists] in old CLASS declared in LinkedList
+## As in was trying to achive a way to add a new funciton to a already defined class[LinkedList]
 
 def mergeTwoLists(list1: Optional[Node], list2: Optional[Node]) -> Optional[Node]:
 
