@@ -5,21 +5,18 @@ from LinkedList import *
 
 def mergeTwoLists(list1: Optional[Node], list2: Optional[Node]) -> Optional[Node]:
     # base case
-    temp1 = list1
-    temp2 = list2
+    if list1 is None:
+        return list2
+    elif list2 is None:
+        return list1
 
-
-    if temp1 is None:
-        return temp2
-    elif temp2 is None:
-        return temp1
     # pattern
-    elif temp1.value < temp2.value:
-        temp1.next = mergeTwoLists(temp1.next, temp2)
-        return temp1
+    elif list1.value < list2.value:
+        list1.next = mergeTwoLists(list1.next, list2)
+        return list1
     else:
-        temp2.next = mergeTwoLists(temp2.next, temp1)
-        return temp2
+        list2.next = mergeTwoLists(list2.next, list1)
+        return list2
 
 
 if __name__ == "__main__":
