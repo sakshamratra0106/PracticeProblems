@@ -2,17 +2,21 @@
 # Linked List which has __init__, __str__, push(), detectLoop() : O(N), removeElements() : O(N)
 from LinkedList import *
 
+
 # TODO
 ## Was not able to add a new function[mergeTwoLists] in old CLASS declared in LinkedList
-## As in was trying to achive a way to add a new funciton to a already defined class[LinkedList]
+## As in was trying to achieve a way to add a new function to a already defined class[LinkedList]
 
 def mergeTwoLists(list1: Optional[Node], list2: Optional[Node]) -> Optional[Node]:
-
     # Time Complexity:  Since we are traversing through the two lists fully.
     # So, the time complexity is O(m+n) where m and n are the lengths of the two lists to be merged.
 
     # third Method in below link
     # https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
+
+    # Merge is one of those nice recursive problems where the recursive solution code is much cleaner than the
+    # iterative code. You probably wouldn’t want to use the recursive version for production code, however,
+    # because it will use stack space which is proportional to the length of the lists.
 
     # base case
     if list1 is None:
@@ -63,10 +67,10 @@ if __name__ == "__main__":
         list12.__class__.__name__,
         list11,
         list12,
-        )
+    )
     )
 
     print("\n Merged Linked List is {}".format(
         LinkedList(mergeTwoLists(list11.head, list12.head))
-        )
+    )
     )
