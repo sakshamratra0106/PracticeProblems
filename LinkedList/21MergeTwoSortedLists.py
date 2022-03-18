@@ -4,6 +4,13 @@ from LinkedList import *
 
 
 def mergeTwoLists(list1: Optional[Node], list2: Optional[Node]) -> Optional[Node]:
+
+    # Time Complexity:  Since we are traversing through the two lists fully.
+    # So, the time complexity is O(m+n) where m and n are the lengths of the two lists to be merged.
+
+    # third Method in below link
+    # https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
+
     # base case
     if list1 is None:
         return list2

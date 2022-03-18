@@ -8,6 +8,9 @@ class Node:
     # 1. Value
     # 2. next = Pointer to the next node
 
+    # TODO
+    ## Make Node available for any kind of Data Type
+
     def __init__(self, value: int):
         self.value = value
         self.next = None
