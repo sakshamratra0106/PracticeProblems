@@ -19,9 +19,9 @@ class LinkedList:
     # Had a Head which has the first elements'
     # location initialized as None when created
 
-    def __init__(self):
+    def __init__(self, head=None):
         # Initializing the Head as None when declared
-        self.head = None
+        self.head = head
 
     def __str__(self) -> str:
         # Magic function to print the Linked List
