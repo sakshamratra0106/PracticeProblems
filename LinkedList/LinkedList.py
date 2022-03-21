@@ -48,6 +48,25 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
+    def pop(self) -> int:
+
+        # removing the top value
+        # as in stack data structure
+
+        # Pop only if the Linked List is non-empty
+        if self.head:
+
+            # poped Value
+            poped_value = self.head.value
+            self.head = self.head.next
+
+        # If the listed list/Stack is empty
+        # return none
+        else:
+            return None
+
+        return poped_value
+
     def detectLoop(self) -> None:
 
         # Implementation of Floyd’s Cycle-Finding Algorithm:

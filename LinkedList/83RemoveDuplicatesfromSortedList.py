@@ -36,3 +36,8 @@ if __name__ == "__main__":
     print(" After removing duplicates it is : {}".format(
         LinkedList(deleteDuplicates(list1.head))
     ))
+
+    # poping Values out
+    print("\n Poped top value {} from the above list. After Pop list will be : {}".format(
+        list1.pop(), list1
+    ))
