@@ -18,6 +18,8 @@ def reverseList(head: Optional[Node]) -> Optional[Node]:
 
     return reversedHead
 
+# TODO
+## Find better solution, recursive sol is also there
 
 class Solution:
     pass
