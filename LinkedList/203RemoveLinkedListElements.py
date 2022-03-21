@@ -50,6 +50,9 @@ class LinkedList:
 
         return self.head
 
+    # TODO
+    ## removeElements2 function Not yet working
+
     def removeElements2(self, val: int) -> Optional[Node]:
 
         # Remove an element from the LinkedList recursively
