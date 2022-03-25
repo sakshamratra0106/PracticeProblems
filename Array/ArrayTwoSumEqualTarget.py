@@ -14,7 +14,7 @@ def sumOfTwoNumbers(nums : List[int], target: int):
     for i,element in enumerate(nums):
         difference = target - element
         if difference in seen:
-            return (seen[difference],i)
+            return seen[difference], i
 
         seen[element]=i
 
