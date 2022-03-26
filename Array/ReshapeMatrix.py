@@ -9,7 +9,9 @@ class Matrix:
     def returnMatrix(self) -> List[List[int]]:
         return self.matrix
 
-    #### TO DO ####
+    # TODO
+    ## Convert or add one __str__ function inplace of showMatrix()
+
     def showMatrix(self) -> None:
         for row in self.matrix:
             for element in row:
@@ -19,6 +21,7 @@ class Matrix:
     def reshapeMatrix(self, r: int, c: int) -> List[List[int]]:
 
         # Its time complexity is O(r * c)
+        # Space Complexity is O(r * c)
 
         availableRows = len(self.matrix)
 
