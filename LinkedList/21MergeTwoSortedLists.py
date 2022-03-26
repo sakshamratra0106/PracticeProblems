@@ -15,7 +15,7 @@ def mergeTwoLists(list1: Optional[Node], list2: Optional[Node]) -> Optional[Node
     # https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
 
     # Merge is one of those nice recursive problems where the recursive solution code is much cleaner than the
-    # iterative code. You probably wouldn’t want to use the recursive version for production code, however,
+    # iterative code. You probably would not want to use the recursive version for production code, however,
     # because it will use stack space which is proportional to the length of the lists.
 
     # base case

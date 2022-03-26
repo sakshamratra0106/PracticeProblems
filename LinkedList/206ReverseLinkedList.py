@@ -3,6 +3,16 @@ from LinkedList import *
 
 
 def reverseList(head: Optional[Node]) -> Optional[Node]:
+
+    """
+
+    :param head:
+    :return:
+
+    Reverses the LinkedList
+    with Time complexity O(N)
+
+    """
     temp = head
 
     reversedHead = None
@@ -18,6 +28,7 @@ def reverseList(head: Optional[Node]) -> Optional[Node]:
 
     return reversedHead
 
+
 # TODO
 ## Find better solution, recursive sol is also there
 
@@ -26,7 +37,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-
     # Creating a List
     list1 = LinkedList()
     list1.push(5)
