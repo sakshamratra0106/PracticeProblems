@@ -2,10 +2,10 @@ import string
 
 
 class Solution:
-    def __init__(self, s: str):
-        self.string = s
+    def __init__(self, word: str):
+        self.string = word
 
-    def isAnagram(self, t: str) -> bool:
+    def isAnagram(self, word: str) -> bool:
         charCount = {}
 
         for element in self.string:
@@ -14,7 +14,7 @@ class Solution:
             else:
                 charCount[element] = 1
 
-        for element in t:
+        for element in word:
             if element not in charCount:
                 return False
             else:
@@ -26,7 +26,7 @@ class Solution:
 
         return True
 
-    def isPlaindrome(self) -> bool:
+    def isPalindrome(self) -> bool:
         valid_characters = string.ascii_letters + string.digits
         potentialPalindrome = ("".join(ch for ch in self.string if ch in valid_characters)).lower()
 
@@ -42,12 +42,11 @@ class Solution:
 
         return True
 
-
     # Can ransomNote: str can be formed out of
     # magazine: str in O(N) time complexity
     # Working code
     # Leetcode 383. Ransom Note
-    def canConstruct(self, magazine: str) -> bool:
+    def canConstruct(self, magazine: str, ransomNote: str) -> bool:
         charCount = {}
         for char in magazine:
             if char in charCount:
@@ -66,6 +65,7 @@ class Solution:
                 return False
 
         return True
+
 
 if __name__ == "__main__":
     # Anagram in O(n) time complexity
@@ -89,8 +89,8 @@ if __name__ == "__main__":
     # In O(n) time complexity
     s = "amanaplanacanalpanama"
     print("Given string {} is a palindrome ? {}"
-          .format(s, Solution(s).isPlaindrome()))
+          .format(s, Solution(s).isPalindrome()))
 
     s = "A man, a plan, a canal: Panama"
     print("Given string {} is a palindrome ? {}"
-          .format(s, Solution(s).isPlaindrome()))
+          .format(s, Solution(s).isPalindrome()))

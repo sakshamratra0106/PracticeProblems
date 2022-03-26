@@ -13,7 +13,7 @@ class Solution:
         i = 0
         j = len(self.string) - 1
 
-        while i != j and i < j:
+        while i < j:
             temp = self.string[i]
             self.string[i] = self.string[j]
             self.string[j] = temp
@@ -25,7 +25,7 @@ class Solution:
     def reverseInteger(self) -> int:
         int_to_list = [i for i in self.string]
 
-        # To inlcude the cases when digit is negative
+        # To include the cases when digit is negative
         # This still can not handle when where
         # If reversing x causes the value to go outside the signed 32-bit integer range
         # [-2 power 31, 2 power 31 - 1], then return 0.
