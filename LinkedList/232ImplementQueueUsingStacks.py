@@ -55,27 +55,27 @@ class MyQueue:
             return
 
         # If queue is has data
-        # move its fronts pointer to next pointer and
+        # move its fronts' pointer to next pointer and
         # save the top Node in temp variable
-        # so that we can return its value as poped in the end
+        # so that we can return its value as popped in the end
         temp = self.front
         self.front = temp.next
 
-        # if after pop, queue is empty i.e front is none
+        # if after pop, queue is empty i.e. front is none
         # make rear none as well
         if self.front is None:
             self.rear = None
 
-        # return poped value
+        # return popped value
         return temp.value
 
-    # to check first element on the front to be poped
+    # to check first element on the front to be popped
     def peek(self) -> int:
         return self.front.value
 
     # is queue empty ?
     def empty(self) -> bool:
-        return self.front == None
+        return self.front is None
 
 
 # Your MyQueue object will be instantiated and called as such:
