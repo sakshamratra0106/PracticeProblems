@@ -103,8 +103,9 @@ class LinkedList:
         # Remove an element from the LinkedList
         # With time complexity as O(N) and Space Complexity as O(1)
 
-        # Remove first and consequence occurrences of the val
-        while self.head and self.head.value == val: self.head = self.head.next
+        # Remove first and consecutive occurrences of the val
+        while self.head and self.head.value == val:
+            self.head = self.head.next
 
         current = self.head
 
