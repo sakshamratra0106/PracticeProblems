@@ -76,13 +76,10 @@ class GeneratePascalsTriangle:
 
         # Use ctr+alt+shift + v to paste lines without new line characters
 
-        # Time complexity is On2 and space complexity is On2
-        # A O(n^2) time and O(1) extra
-        # space method for Pascal's Triangle
-        # Method 3 ( O(n^2) time and O(1) extra space )
-        # This method is based on method 1. We know that ith entry in a line number line is Binomial Coefficient C(line, i)
-        # and all lines start with value 1. The idea is to calculate C(line, i) using C(line, i-1).
-        # It can be calculated in O(1) time using the following.
+        # Time complexity is On2 and space complexity is On2 A O(n^2) time and O(1) extra space method for Pascal's
+        # Triangle Method 3 ( O(n^2) time and O(1) extra space ) This method is based on method 1. We know that ith
+        # entry in a line number line is Binomial Coefficient C(line, i) and all lines start with value 1. The idea
+        # is to calculate C(line, i) using C(line, i-1). It can be calculated in O(1) time using the following.
         #
         #
         # C(line, i)   = line! / ( (line-i)! * i! )
@@ -97,12 +94,11 @@ class GeneratePascalsTriangle:
             for i in range(1, line + 1):
                 # The first value in a
                 # line is always 1
-                print(C, end=" ");
+                # print(C, end=" ");
                 C = int(C * (line - i) / i);
-            print("");
+            print("")
 
-
-    # Working code for Dynamic Pogramming
+    # Working code for Dynamic Programming
     # Time Complexity NA
 
     # def generate(self, numRows: int) -> List[List[int]]:

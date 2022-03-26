@@ -25,11 +25,11 @@ def merge(nums1: List[int], nums2: List[int], m: int = 0, n: int = 0) -> None:
 
     if m <= 0 or n <= 0:
         nums1[:] = nums1[:] + nums2[:]
-        print("having a corner case where  m <= 0 or n <= 0")
+        # print("having a corner case where  m <= 0 or n <= 0")
         return
 
     while i + j < m + n - 1:
-        print(nums1, "--", i, "--", j, "--", nums1[i] > nums2[j], nums1[i], "--", nums2[j])
+        # print(nums1, "--", i, "--", j, "--", nums1[i] > nums2[j], nums1[i], "--", nums2[j])
         if nums1[i] > nums2[j]:
             nums1.insert(i, nums2[j])
             j += 1
