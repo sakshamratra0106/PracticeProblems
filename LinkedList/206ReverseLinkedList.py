@@ -30,7 +30,7 @@ def reverseList(head: Optional[Node]) -> Optional[Node]:
 
 
 # TODO
-## Find better solution, recursive sol is also there
+## Find better solution, with O(1) space complexity and recursive sol is also there
 
 class Solution:
     pass
