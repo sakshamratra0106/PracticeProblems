@@ -81,9 +81,6 @@ def reverseList2(head: Optional[Node]) -> Optional[Node]:
     return rest
 
 
-# TODO
-## Find better solution, with O(1) space complexity and recursive sol is also there
-
 class Solution:
     pass
 
