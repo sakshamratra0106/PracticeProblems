@@ -122,6 +122,34 @@ class LinkedList:
         return self.head
 
 
+def reverseList(head: Optional[Node]) -> Optional[Node]:
+    """
+
+    :param head: Pointing to the head of the linked list
+    :return: head pointed to linked list in reversed order of originally provided
+
+    Time Complexity : O(N)
+    Space Complexity : O(1)
+
+    """
+
+    reversedList = None
+
+    while head:
+        temp = head
+        head = head.next
+
+        # inserting the top of the LL to reversedList
+        temp.next = reversedList
+        reversedList = temp
+
+        # For Debugging
+        # print(reversesList)
+        # print(temp.value)
+
+    return reversedList
+
+
 if __name__ == "__main__":
     # Creating LinkedList 1
     list1 = LinkedList()
