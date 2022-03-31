@@ -23,6 +23,9 @@ class Solution:
 
         for index, char in enumerate(haystack):
             if char == needle[0]:
+
+                # print(haystack[index:index + needleLen],"--", needle)
+
                 if haystack[index:index + needleLen] == needle:
                     return index
 
@@ -47,6 +50,12 @@ if __name__ == "__main__":
 
     haystack = ""
     needle = ""
+    print("\nFor a given Haystack \"{}\" and Needle \"{}\". Needle is located at Index: {}".format(
+        haystack, needle, Solution().strStr(haystack, needle)
+    ))
+
+    haystack = "aaaabbbbcccc"
+    needle = "bbbbbbb"
     print("\nFor a given Haystack \"{}\" and Needle \"{}\". Needle is located at Index: {}".format(
         haystack, needle, Solution().strStr(haystack, needle)
     ))
