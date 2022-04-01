@@ -29,15 +29,19 @@ class LinkedList:
     def __str__(self) -> str:
         # Magic function to print the Linked List
         # OR in general used to return a String when called in a print() function
-        printLinkedList = "Head-->"
-        temp = self.head
-        while temp:
-            printLinkedList += str(temp.value) + "-->"
-            temp = temp.next
 
-        printLinkedList += str(temp)
+        if self.detectLoop():
+            return "\"A Cyclic Linked List has been detected. Hence can not print.\""
+        else:
+            printLinkedList = "Head-->"
+            temp = self.head
+            while temp:
+                printLinkedList += str(temp.value) + "-->"
+                temp = temp.next
 
-        return printLinkedList
+            printLinkedList += str(temp)
+
+            return printLinkedList
 
     def push(self, value: int) -> None:
 
@@ -116,6 +120,34 @@ class LinkedList:
                 current = current.next
 
         return self.head
+
+
+def reverseList(head: Optional[Node]) -> Optional[Node]:
+    """
+
+    :param head: Pointing to the head of the linked list
+    :return: head pointed to linked list in reversed order of originally provided
+
+    Time Complexity : O(N)
+    Space Complexity : O(1)
+
+    """
+
+    reversedList = None
+
+    while head:
+        temp = head
+        head = head.next
+
+        # inserting the top of the LL to reversedList
+        temp.next = reversedList
+        reversedList = temp
+
+        # For Debugging
+        # print(reversesList)
+        # print(temp.value)
+
+    return reversedList
 
 
 if __name__ == "__main__":
