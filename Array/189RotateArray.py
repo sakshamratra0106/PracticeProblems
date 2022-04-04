@@ -92,6 +92,6 @@ if __name__ == "__main__":
     nums1 = [-1,-100,3,99]
     k = 2
     Solution().rotate2(nums1, k)
-    print("1. for a given array {} after rotating for {} steps array will be {}".format(
+    print("2. for a given array {} after rotating for {} steps array will be {}".format(
         nums, k, nums1
     ))
