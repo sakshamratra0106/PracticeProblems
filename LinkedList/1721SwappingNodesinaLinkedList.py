@@ -10,6 +10,16 @@ from LinkedList import Node, LinkedList
 
 class Solution:
     def swapNodes(self, head: Optional[Node], k: int) -> Optional[Node]:
+        """
+
+        :param head:
+        :param k:
+        :return:
+
+        TC : O(N)
+        SC : O(N)
+
+        """
 
         # Return head of its None
         if head is None:
@@ -39,6 +49,17 @@ class Solution:
         return head
 
     def swapNodes1(self, head: Optional[Node], k: int) -> Optional[Node]:
+        """
+
+        :param head:
+        :param k:
+        :return:
+
+        Single Pass, Two Pointers
+        TC : O(N)
+        SC : O(1)
+
+        """
 
         # Return head of its None
         if head is None:
@@ -72,9 +93,15 @@ if __name__ == "__main__":
     list1.push(4)
     list1.push(5)
     list1.push(6)
+    print("0. Original LinkedList {}".format(list1))
     k = 2
     # Printing Values of Linked List 1
     Solution().swapNodes(list1.head, k)
     print("1. {} after swapping {}th element will be {}.".format(
+        list1.__class__.__name__, k, list1
+    ))
+
+    Solution().swapNodes1(list1.head, k)
+    print("2. {} after swapping {}th element will be {}.".format(
         list1.__class__.__name__, k, list1
     ))
