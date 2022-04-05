@@ -35,6 +35,9 @@ class Solution:
 
         Calculates the Max Rain water trapped
 
+        TC : O(N)
+        SC : O(1)
+        Two Pointers, Greedy Method
 
         """
 
