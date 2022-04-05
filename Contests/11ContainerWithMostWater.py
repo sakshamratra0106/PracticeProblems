@@ -43,13 +43,14 @@ class Solution:
 
         width = len(height)
 
+        # Corner Case if given array is of length 0 or 1
         if width == 0 or width == 1:
             return 0
 
         maxArea = 0
         leftSide = 0
         rightSide = width - 1
-
+        # Traverse through using two pointers
         while leftSide < rightSide:
             maxArea = max(maxArea, (rightSide - leftSide) * min(height[leftSide], height[rightSide]))
 
@@ -58,6 +59,7 @@ class Solution:
             else:
                 rightSide -= 1
 
+        # Return max
         return maxArea
 
 
