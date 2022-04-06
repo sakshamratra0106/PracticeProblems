@@ -58,3 +58,9 @@ class Solution:
                 else:
                     hi -= 1
         return ret
+
+
+if __name__ == "__main__":
+    pass
+    # TODO
+    ## Try once on your own
