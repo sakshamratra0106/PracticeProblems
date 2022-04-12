@@ -11,8 +11,8 @@ class TreeNode:
 
 # Implementing Binary Search Tree
 class BinarySearchTree:
-    def __init__(self, head=None):
-        self.head = head
+    def __init__(self, root=None):
+        self.root = root
 
     # Inserting values to the binary search tree
     def insert(self, value: int):
@@ -30,7 +30,7 @@ class BinarySearchTree:
         n = TreeNode(value)
 
         y = None
-        temp = self.head
+        temp = self.root
 
         # finding the parent node
         # where new can become a child node
@@ -45,9 +45,9 @@ class BinarySearchTree:
         # n.parent = y
 
         # Assign the new child node to the new paren node
-        # Or to head itself if the tree was empty before
-        if y is None:  # newly added node is head
-            self.head = n
+        # Or to root itself if the tree was empty before
+        if y is None:  # newly added node is root
+            self.root = n
         elif n.val < y.val:
             y.left = n
         else:
@@ -87,13 +87,13 @@ if __name__ == "__main__":
     btree.insert(80)
 
     print("\n Binary Search Tree Inorder Traversal after inserting is {}".format(
-        btree.inOrderTraversal(btree.head)
+        btree.inOrderTraversal(btree.root)
     ))
 
     print("\n Binary Search Tree Inorder Traversal after inserting is {}".format(
-        btree.preOrderTraversal(btree.head)
+        btree.preOrderTraversal(btree.root)
     ))
 
     print("\n Binary Search Tree Inorder Traversal after inserting is {}".format(
-        btree.postOrderTraversal(btree.head)
+        btree.postOrderTraversal(btree.root)
     ))
