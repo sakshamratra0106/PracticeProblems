@@ -50,6 +50,8 @@ if __name__ == "__main__":
 
     # Tried creating a  wrong Binary Search Tree
     # But did not work
+    ## TODO
+    # Implement creating a wrong BST
 
     # print("Creating a Wrong Binary Search Tree")
     # btree = BinarySearchTree()
