@@ -74,6 +74,46 @@ class BinarySearchTree:
             self.postOrderTraversal(node.right)
             print(node.val, end=",")
 
+        # Inserting values to the binary search tree
+    def insertBinarySearchTreeWrongly(self, root: Optional[TreeNode], value: int):
+        """
+
+        :param root:
+        :param value:
+        :return:
+
+        TC : O(N) [If binary tree is skewed]
+        TC : O(LogN)
+        SC : O(1)
+
+        """
+        # Create treenode using the inserted value
+        n = TreeNode(value)
+
+        y = None
+        temp = root
+
+        # finding the parent node
+        # where new can become a child node
+        while temp:
+            y = temp
+            if n.val < temp.val:
+                temp = temp.left
+            else:
+                temp = temp.right
+
+        # Incase implementation has parent pointer as well
+        # n.parent = y
+
+        # Assign the new child node to the new paren node
+        # Or to root itself if the tree was empty before
+        if y is None:  # newly added node is root
+            root = n
+        elif n.val > y.val:
+            y.left = n
+        else:
+            y.right = n
+
 
 if __name__ == "__main__":
     print("Creating a Binary Search Tree")
