@@ -38,7 +38,7 @@ class Solution:
         5. Swap the min value after the peak and the element previous the peak
         6. Sort the array from the latest_peak to the end of the array
 
-        Time complexity = O(nlogn)
+        Time complexity = O(nlogn) - for sorted() function has TE O(NLogN)
         """
 
         latestPeak = False

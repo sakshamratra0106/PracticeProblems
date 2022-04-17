@@ -37,7 +37,20 @@ INSERT INTO flights VALUES ('4','banglore','mumbai');
 INSERT INTO flights VALUES ('5','banglore','delhi');
 INSERT INTO flights VALUES ('6','delhi','banglore');
 
-select * from flights
+select * from flights;
+
+select
+    f1.id AS f1_id,
+--    f2.id AS f2_id,
+    f1.source_location source_location1,
+    f2.source_location
+from flights f1
+inner join flights f2
+on f1.source_location = f2.destination_location
+and f2.source_location = f1.destination_location
+and f1.id>f2.id
+
+-- OR
 
 WITH dup_record AS (
     select

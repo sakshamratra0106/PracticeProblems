@@ -8,6 +8,13 @@ class Solution:
 
     def searchMatrixN2(self,
                        target: int) -> bool:
+        """
+
+        :param target:
+        :return:
+
+        TE : O(N^2)
+        """
 
         # Searching a Target in a Matrix
         # with time complexity N2 and Memory as 1
@@ -37,7 +44,6 @@ class Solution:
             else:
                 return self.binarySearch(arr, mid + 1, endIndex, target)
 
-
         # Incase array is of zero length
         else:
             return -1
@@ -46,7 +52,7 @@ class Solution:
                           target: int) -> bool:
 
         # Searching a Target in a Matrix
-        # with time complexity O(N * LogN) and Memory as 1
+        # with time complexity O(R * LogC) and Memory as 1
         for row in self.matrix:
             if self.binarySearch(row, 0, len(row) - 1, target) >= 0:
                 return True
