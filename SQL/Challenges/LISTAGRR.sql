@@ -29,6 +29,7 @@
 --from shipment_with_Date_rank c
 
 --==>>Concat strings in multiple rows
+--WA SQL row per shipment and route consisting source, destination and intermediary stops with "->"
 SELECT a.shipment,
 LISTAGG(a.place, '-> ') WITHIN GROUP (ORDER BY a.date_recieved) AS route
 FROM shipment_with_Date a
