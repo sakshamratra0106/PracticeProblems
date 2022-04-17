@@ -49,7 +49,7 @@ def intersectOfArray1(nums1: List[int], nums2: List[int]) -> List[int]:
 
     1. What if the given array is already sorted? How would you optimize your algorithm?
     TC : O(N)
-    SC : O(N)
+    SC : O(1)
     """
 
     length1 = len(nums1)
