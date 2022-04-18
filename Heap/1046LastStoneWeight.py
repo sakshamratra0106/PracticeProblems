@@ -56,10 +56,13 @@ class Solution:
         return stones[0]
 
     def lastStoneWeight1(self, stones: List[int]) -> int:
+
         # first, negate all weight values in-place
         for i, s in enumerate(stones):
             stones[i] = -s
+
         heapify(stones)  # pass all negated values into the min-heap
+
         while stones:
             s1 = -heappop(stones)  # the heaviest stone
             if not stones:  # s1 is the remaining stone

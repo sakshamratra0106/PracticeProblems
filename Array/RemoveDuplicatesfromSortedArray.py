@@ -81,13 +81,14 @@ class Solution:
 
         length = len(nums)
         for index in range(length):
-            val = nums[index] % length
+            val = nums[index]
             nums[val] = nums[val] + length
 
         print("Printing Duplicate values")
         for i in range(length):
             if nums[i] >= length * 2:
                 print(i, end=" ")
+        print()
         return
 
 
@@ -111,7 +112,7 @@ if __name__ == "__main__":
     ))
 
     # O(N) and O(1)
-    nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5]
     print("4. Given a sorted array : {}. Updated array with unique elements till index is : {}.".format(
         nums, Solution().returnDuplicates1(nums)
     ))

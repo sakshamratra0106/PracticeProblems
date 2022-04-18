@@ -129,7 +129,6 @@ def SubarrayWithMaxSum(nums):
 
         if globalMax == 0:
             break
-
         startIndex -= 1
 
     return nums[startIndex:endIndex + 1]
