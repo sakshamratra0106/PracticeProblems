@@ -59,7 +59,7 @@ class MyQueue:
         # save the top Node in temp variable
         # so that we can return its value as popped in the end
         temp = self.front
-        self.front = temp.next
+        self.front = self.front.next
 
         # if after pop, queue is empty i.e. front is none
         # make rear none as well

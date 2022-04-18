@@ -17,8 +17,6 @@ class Solution:
             tmp = int(tmp / 10)
             reverseInt = reverseInt * 10 + pop
 
-            # TODO
-            ## Underflow and Overflow should be checked before creating reverseInt operation everytime
             if reverseInt < - 2 ** 31 or reverseInt > 2 ** 31 - 1:
                 return 0
             # print(pop, "--", tmp, "--", reverseInt)
