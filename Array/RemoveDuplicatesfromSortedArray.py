@@ -81,7 +81,7 @@ class Solution:
 
         length = len(nums)
         for index in range(length):
-            val = nums[index]
+            val = nums[index] % length
             nums[val] = nums[val] + length
 
         print("Printing Duplicate values")
