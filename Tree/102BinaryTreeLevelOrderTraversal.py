@@ -29,3 +29,15 @@ class Solution:
                     q.append(node.right)
             res.append(tmp)
         return res
+
+
+if __name__ == "__main__":
+    # Driver Code
+    # Let's construct the tree show in the above figure
+    root = TreeNode(3)
+    root.left = TreeNode(9)
+    root.right = TreeNode(20)
+    root.right.left = TreeNode(15)
+    root.right.right = TreeNode(7)
+
+    print("For a given tree above {}".format(Solution().levelOrder(root)))
