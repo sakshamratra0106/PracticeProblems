@@ -12,6 +12,15 @@ class TreeNode:
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        """
+
+        :param root:
+        :return:
+
+        Time Complexity: O(n) where n is the number of nodes in the binary tree
+        Auxiliary Space: O(n) where n is the number of nodes in the binary tree
+
+        """
         if not root:
             return root
         res = []
