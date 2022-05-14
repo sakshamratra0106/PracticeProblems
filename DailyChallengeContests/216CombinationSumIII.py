@@ -12,6 +12,21 @@ class Solution:
         return ans
 
     def validCombination(self, k, n, ans, i, intermediate):
+        """
+        Time complexity - O(2^k * k) coz when you draw a recursion tree of it you'll found that at every step
+        we're taking decision of taking a element or not taking it, hence, at every level there will be 2^level of nodes present
+        and there will not be more than k levels present and will take O(k) time to push every element in ans variable.
+
+        Space complexity - O(N) auxiliary stack space and also depends on the number of combination,
+        so apart from auxiliary stack space we can't predict space complexity.
+
+        :param k:
+        :param n:
+        :param ans:
+        :param i:
+        :param intermediate:
+        :return:
+        """
 
         # when sum  and length is equal, we got our subset
         if k == len(intermediate) and n == sum(intermediate):
