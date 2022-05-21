@@ -38,7 +38,7 @@ class Solution:
             return 1
         q = deque()
         q.append((root.left, root.right))
-        while len(q):
+        while q:
             left, right = q.popleft()
             if left is None and right is None:
                 continue
@@ -62,3 +62,13 @@ if __name__ == "__main__":
     print("Symmetric" if Solution().isSymmetric(root) == True else "Not symmetric")
     print("Symmetric" if Solution().isSymmetric1(root) == True else "Not symmetric")
     # This code is contributed by Nikhil Kumar Singh(nickzuck_007)
+
+    root = TreeNode(1)
+    root.left = TreeNode(2)
+    root.right = TreeNode(2)
+    root.left.left = TreeNode(3)
+    root.left.right = TreeNode(5)
+    root.right.left = TreeNode(4)
+    root.right.right = TreeNode(3)
+    print("Symmetric" if Solution().isSymmetric(root) == True else "Not symmetric")
+    print("Symmetric" if Solution().isSymmetric1(root) == True else "Not symmetric")
