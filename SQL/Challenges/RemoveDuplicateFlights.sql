@@ -1,4 +1,4 @@
---REmove duplicates from Flight table
+--Remove duplicates from Flight table
 --https://www.interviewquery.com/questions/flight-records
 --
 -- table

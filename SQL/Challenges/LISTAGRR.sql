@@ -33,4 +33,4 @@
 SELECT a.shipment,
 LISTAGG(a.place, '-> ') WITHIN GROUP (ORDER BY a.date_recieved) AS route
 FROM shipment_with_Date a
-GROUP BY a.shipment;
+GROUP BY a.shipment
