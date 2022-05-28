@@ -39,9 +39,14 @@ ORDER BY dept,rankedBySalary
 
 
 --## Delete from table where we have duplicates and no primary key
-DELETE from table
-WHERE
-    SELECT
-        *,
-        row_number() CTE - Common table expression
-    FROM EMP
+--A Common Table Expression, also called as CTE in short form, is a temporary named result set that you can reference within a
+--SELECT, INSERT, UPDATE, or DELETE statement. The CTE can also be used in a View.
+
+
+WITH table_nameCTE AS
+(
+   SELECT*, ROW_NUMBER() over (PARTITION BY ID ORDER BY ID) as < alias_name >
+   FROM table_name
+)
+
+DELETE FROM table_nameCTE WHERE alias_name >1
