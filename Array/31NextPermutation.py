@@ -75,9 +75,17 @@ if __name__ == "__main__":
         nums, nums1
     ))
 
+
     nums = [3, 2, 1]
     nums1 = [3, 2, 1]
     Solution().nextPermutation(nums1)
-    print("1. For given {} Int array. The next max Permutation is {}".format(
+    print("2. For given {} Int array. The next max Permutation is {}".format(
+        nums, nums1
+    ))
+
+    nums = [3, 2, 1, 8, 9, 0]
+    nums1 = [3, 2, 1, 8, 9, 0]
+    Solution().nextPermutation(nums1)
+    print("3. For given {} Int array. The next max Permutation is {}".format(
         nums, nums1
     ))
